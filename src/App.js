@@ -14,7 +14,8 @@ class App extends Component {
     kitten,
     clickedKitten: [],
     score: 0,
-    topScore: 0
+    topScore: 0,
+    msg: "A Cute & Cuddly MEOWmory Game"
   };
 
 //when you click on a card ... the kitten is taken out of the array
@@ -31,9 +32,10 @@ class App extends Component {
         }),
         clickedKitten: [],
         topScore: (this.state.score > this.state.topScore) ? this.state.score: this.state.topScore,
-        score: 0        
+        score: 0,
+        msg: "You Already Clicked MEOW!  Play again?"
       });
-        alert("You lose. Play again?");
+       // alert("You lose. Play again?");
 
 //if you click on an available kitten, your score is increased and cards reordered
     } else {
@@ -45,18 +47,20 @@ class App extends Component {
           clickedKitten: this.state.clickedKitten.concat(
             currentKitten
           ),
-          score: this.state.score + 1
+          score: this.state.score + 1,
+          msg: "MEOW Clicked a New Kitten!"
         },
 //if you get all 12 kitten corrent you get a congrats message and the game resets        
         () => {
           if (this.state.score === 12) {
-            alert("Meeeoow! You Win!");
+           // alert("Meeeoow! You Win!");
             this.setState({
               kitten: this.state.kitten.sort(function(a, b) {
                 return 0.5 - Math.random();
               }),
               clickedKitten: [],
-              score: 0
+              score: 0,
+              msg: "MEEEOOOOW!  You Win!"
             });
           }
         }
@@ -68,7 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Navbar score={this.state.score} topScore={this.state.topScore}/>
+        <Navbar msg={this.state.msg} score={this.state.score} topScore={this.state.topScore}/>
         <Jumbotron />
         <div className="wrapper">
           {this.state.kitten.map(kitten => (

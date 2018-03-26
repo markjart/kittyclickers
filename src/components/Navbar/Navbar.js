@@ -8,7 +8,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-default navbar-fixed-top">
          <ul>
           <li className="itemLeft">Kitty Clickers</li>
-          <li className="itemCenter">A Cute & Cuddly MEOWmory Game</li>
+          <li className="itemCenter">{this.props.msg}</li>
           <li className="itemRight">Score: {this.props.score} / Top: {this.props.topScore}</li>
         </ul>
       </nav>
