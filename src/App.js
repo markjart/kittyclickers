@@ -6,13 +6,15 @@ import FriendCard from "./components/FriendCard";
 import Footer from "./components/Footer";
 import kitten from "./kitten.json";
 import "./App.css";
+//import shake from 'react-animations/lib/shake';
 
 //sets state to 0 or empty
 class App extends Component {
   state = {
     kitten,
     clickedKitten: [],
-    score: 0
+    score: 0,
+    topScore: 0
   };
 
 //when you click on a card ... the kitten is taken out of the array
@@ -28,7 +30,8 @@ class App extends Component {
           return 0.5 - Math.random();
         }),
         clickedKitten: [],
-        score: 0
+        topScore: (this.state.score > this.state.topScore) ? this.state.score: this.state.topScore,
+        score: 0        
       });
         alert("You lose. Play again?");
 
@@ -65,7 +68,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Navbar score={this.state.score} />
+        <Navbar score={this.state.score} topScore={this.state.topScore}/>
         <Jumbotron />
         <div className="wrapper">
           {this.state.kitten.map(kitten => (

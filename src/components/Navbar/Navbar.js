@@ -9,7 +9,7 @@ class Navbar extends Component {
          <ul>
           <li className="itemLeft">Kitty Clickers</li>
           <li className="itemCenter">A Cute & Cuddly MEOWmory Game</li>
-          <li className="itemRight">&nbsp;&nbsp;Score: {this.props.score}&nbsp;&nbsp;</li>
+          <li className="itemRight">Score: {this.props.score} / Top: {this.props.topScore}</li>
         </ul>
       </nav>
     );
