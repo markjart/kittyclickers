@@ -31,7 +31,6 @@ class App extends Component {
         score: 0
       });
         alert("You lose. Play again?");
-        //Modal plugs in here somehow
 
 //if you click on an available kitten, your score is increased and cards reordered
     } else {
@@ -48,7 +47,7 @@ class App extends Component {
 //if you get all 12 kitten corrent you get a congrats message and the game resets        
         () => {
           if (this.state.score === 12) {
-            alert("Yay! You Win!");
+            alert("Meeeoow! You Win!");
             this.setState({
               kitten: this.state.kitten.sort(function(a, b) {
                 return 0.5 - Math.random();
