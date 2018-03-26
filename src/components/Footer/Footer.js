@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () => (
 	<footer className = "footer">
-		<p>REACT Homework by Mark Jasinski</p>
+		<p><a href='https://reactjs.org/'>REACT</a> Homework by Mark Jasinski</p>
 	</footer>
 );
 
